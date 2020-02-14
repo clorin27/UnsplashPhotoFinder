@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recent Searches View Controller-->
+        <scene sceneID="qTl-8a-8d6">
+            <objects>
+                <viewController storyboardIdentifier="RecentSearchesViewController" id="lc0-eb-3Gd" customClass="RecentSearchesViewController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="13Q-Qv-A2n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wDf-Tj-B16">
+                                <rect key="frame" x="0.0" y="44" width="414" height="468"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="468" id="v14-Kc-3Cm"/>
+                                </constraints>
+                                <color key="separatorColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentSearchesTableViewCell" id="LkV-ue-2KW" customClass="RecentSearchesTableViewCell" customModule="UnsplashPhotoFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="40.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LkV-ue-2KW" id="bRP-c0-1It">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ous-wi-9IT">
+                                                    <rect key="frame" x="30" y="10" width="284" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Ous-wi-9IT" firstAttribute="leading" secondItem="bRP-c0-1It" secondAttribute="leading" constant="30" id="4sc-sh-sdG"/>
+                                                <constraint firstItem="Ous-wi-9IT" firstAttribute="top" secondItem="bRP-c0-1It" secondAttribute="top" constant="10" id="k7g-ws-HsW"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ous-wi-9IT" secondAttribute="bottom" constant="10" id="yTi-IS-eWC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ous-wi-9IT" secondAttribute="trailing" constant="100" id="yu8-tn-XnM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="recentSearchLabel" destination="Ous-wi-9IT" id="woP-Zj-k8z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wDf-Tj-B16" firstAttribute="leading" secondItem="pbL-Wo-eJh" secondAttribute="leading" id="BQU-k7-hXt"/>
+                            <constraint firstItem="pbL-Wo-eJh" firstAttribute="trailing" secondItem="wDf-Tj-B16" secondAttribute="trailing" id="G4Y-fq-peP"/>
+                            <constraint firstItem="wDf-Tj-B16" firstAttribute="top" secondItem="pbL-Wo-eJh" secondAttribute="top" id="sh3-Q9-4bL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pbL-Wo-eJh"/>
+                    </view>
+                    <connections>
+                        <outlet property="recentSearchesTableView" destination="wDf-Tj-B16" id="d9j-wR-OUj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1EY-du-U9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="62"/>
+        </scene>
+    </scenes>
+</document>

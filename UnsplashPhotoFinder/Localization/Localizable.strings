@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  UnsplashPhotoFinder
+
+  Created by Christelle Lorin on 2/9/20.
+  Copyright © 2020 Christelle Lorin. All rights reserved.
+*/
+
+"SearchBarPlaceholder" = "Search Photos!";
+
+"AlertErrorTitle" = "UH OH!";
+"AlertEmptyTitle" = "There are no pictures to display!  Search Again!";
+
+"DismissAction" = "Dismiss";
+
+"FavoritePhotosTitle" = "Your Favorite Photos!";
+
+"RecentSearchesHeaderTitle" = "Recent Searches";
+"SuggestedSearchesHeaderTitle" = "Our suggestions for you...";
+
+"LikeToFavoriteAlreadyLikedText" = "Thank you for loving this photo!";
+"LikeToFavoriteThisPhotoText" = "Love this and add to your favorites!";
+

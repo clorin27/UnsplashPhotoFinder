@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5u-Sh-t2X">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites View Controller-->
+        <scene sceneID="hW9-dE-ptS">
+            <objects>
+                <viewController id="sKr-gP-swB" customClass="FavoritesViewController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HGP-GN-bPI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aqi-G2-xch">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoritesTableViewCell" id="vT1-w1-bKB" customClass="FavoritesTableViewCell" customModule="UnsplashPhotoFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="2.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vT1-w1-bKB" id="i6d-15-Mf4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-MK-lIb">
+                                                    <rect key="frame" x="0.0" y="1" width="414" height="0.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Z0H-MK-lIb" secondAttribute="trailing" id="1JK-g1-EKj"/>
+                                                <constraint firstItem="Z0H-MK-lIb" firstAttribute="top" secondItem="i6d-15-Mf4" secondAttribute="top" constant="1" id="P1c-yr-wqX"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z0H-MK-lIb" secondAttribute="bottom" constant="1" id="TO8-0h-Q5X"/>
+                                                <constraint firstItem="Z0H-MK-lIb" firstAttribute="leading" secondItem="i6d-15-Mf4" secondAttribute="leading" id="btN-R7-huz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="favoritePhotoImageView" destination="Z0H-MK-lIb" id="Tkd-qv-HIa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="83W-rf-Oom" firstAttribute="bottom" secondItem="Aqi-G2-xch" secondAttribute="bottom" id="2Ef-9i-H4w"/>
+                            <constraint firstItem="83W-rf-Oom" firstAttribute="trailing" secondItem="Aqi-G2-xch" secondAttribute="trailing" id="Mjs-Tq-y6i"/>
+                            <constraint firstItem="Aqi-G2-xch" firstAttribute="leading" secondItem="83W-rf-Oom" secondAttribute="leading" id="gv0-ax-4Tz"/>
+                            <constraint firstItem="Aqi-G2-xch" firstAttribute="top" secondItem="83W-rf-Oom" secondAttribute="top" id="sQb-5t-HkP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="83W-rf-Oom"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FHU-fp-eER"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="Aqi-G2-xch" id="hhq-ix-JCg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VU-t7-bK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575.36231884058" y="92.410714285714278"/>
+        </scene>
+        <!--Favorites Detail View Controller-->
+        <scene sceneID="ezc-M1-VIU">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesDetailViewController" id="QwK-jH-qRc" customClass="FavoritesDetailViewController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kEe-as-zNh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sac-Ab-Ivf">
+                                <rect key="frame" x="87" y="196" width="240" height="216.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrT-He-s1S">
+                                <rect key="frame" x="172" y="432.5" width="70" height="31"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="25"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F43-Hb-M8p">
+                                <rect key="frame" x="185" y="483.5" width="44.5" height="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F43-Hb-M8p" firstAttribute="top" secondItem="nrT-He-s1S" secondAttribute="bottom" constant="20" id="5f4-An-Hfe"/>
+                            <constraint firstItem="nrT-He-s1S" firstAttribute="top" secondItem="sac-Ab-Ivf" secondAttribute="bottom" constant="20" id="Agb-z3-PEB"/>
+                            <constraint firstItem="nrT-He-s1S" firstAttribute="centerX" secondItem="sac-Ab-Ivf" secondAttribute="centerX" id="EcY-kN-guM"/>
+                            <constraint firstItem="nrT-He-s1S" firstAttribute="centerY" secondItem="kEe-as-zNh" secondAttribute="centerY" id="Skj-yG-Ofh"/>
+                            <constraint firstItem="sac-Ab-Ivf" firstAttribute="leading" secondItem="bbt-q7-Rzk" secondAttribute="leading" constant="87" id="THd-5V-MUs"/>
+                            <constraint firstItem="F43-Hb-M8p" firstAttribute="centerX" secondItem="bbt-q7-Rzk" secondAttribute="centerX" id="Zlm-BU-b9Y"/>
+                            <constraint firstItem="sac-Ab-Ivf" firstAttribute="top" secondItem="bbt-q7-Rzk" secondAttribute="top" constant="152" id="jLV-kG-YwC"/>
+                            <constraint firstItem="bbt-q7-Rzk" firstAttribute="trailing" secondItem="sac-Ab-Ivf" secondAttribute="trailing" constant="87" id="mNh-Gb-Ygg"/>
+                            <constraint firstItem="sac-Ab-Ivf" firstAttribute="centerX" secondItem="bbt-q7-Rzk" secondAttribute="centerX" id="p1k-sk-neK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bbt-q7-Rzk"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="F43-Hb-M8p" id="Ytp-Td-MfN"/>
+                        <outlet property="favoritedPhotoImageView" destination="sac-Ab-Ivf" id="wzV-oh-cTB"/>
+                        <outlet property="userLabel" destination="nrT-He-s1S" id="q9B-m2-GaF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WP7-Pc-AJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3285" y="100"/>
+        </scene>
+        <!--RecentSearchesViewController-->
+        <scene sceneID="gtI-Nt-dtr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecentSearches" referencedIdentifier="RecentSearchesViewController" id="81s-iz-IsV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIg-hv-Cj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2839" y="-990"/>
+        </scene>
+        <!--Photo Search View Controller-->
+        <scene sceneID="wHJ-t0-ULm">
+            <objects>
+                <viewController storyboardIdentifier="PhotoSearchViewController" id="hku-0b-imT" customClass="PhotoSearchViewController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jz1-IA-9YL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29l-xd-VSJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're happy you're here!  Start searching!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-Ac-RBp">
+                                        <rect key="frame" x="27" y="150" width="360.5" height="67"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="29"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b4l-Ac-RBp" secondAttribute="trailing" id="9vX-3K-GiY"/>
+                                    <constraint firstItem="b4l-Ac-RBp" firstAttribute="top" secondItem="29l-xd-VSJ" secondAttribute="top" constant="150" id="M9P-xE-8RY"/>
+                                    <constraint firstItem="b4l-Ac-RBp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="29l-xd-VSJ" secondAttribute="leading" id="dEj-hL-W2h"/>
+                                    <constraint firstItem="b4l-Ac-RBp" firstAttribute="centerX" secondItem="29l-xd-VSJ" secondAttribute="centerX" id="ubW-19-l4I"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1x1-hv-TMR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoSearchTableViewCell" id="7ep-y0-kzZ" customClass="PhotoSearchTableViewCell" customModule="UnsplashPhotoFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="2.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ep-y0-kzZ" id="MBR-8K-bcs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JA1-Qy-Zc9">
+                                                    <rect key="frame" x="0.0" y="1" width="414" height="0.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="JA1-Qy-Zc9" secondAttribute="trailing" id="BKe-jP-wij"/>
+                                                <constraint firstItem="JA1-Qy-Zc9" firstAttribute="top" secondItem="MBR-8K-bcs" secondAttribute="top" constant="1" id="fte-X1-H2A"/>
+                                                <constraint firstAttribute="bottom" secondItem="JA1-Qy-Zc9" secondAttribute="bottom" constant="1" id="ssA-ps-adw"/>
+                                                <constraint firstItem="JA1-Qy-Zc9" firstAttribute="leading" secondItem="MBR-8K-bcs" secondAttribute="leading" id="upw-45-EiV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="JA1-Qy-Zc9" id="DnL-9X-bIY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-kJ-ejP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="375"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="81s-iz-IsV" kind="embed" identifier="RecentSearchesSegue" id="cny-4J-1go"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="top" secondItem="R5g-kJ-ejP" secondAttribute="top" id="0yR-is-fO2"/>
+                            <constraint firstItem="29l-xd-VSJ" firstAttribute="leading" secondItem="TgK-Be-mua" secondAttribute="leading" id="CKh-9v-SeA"/>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="trailing" secondItem="1x1-hv-TMR" secondAttribute="trailing" id="PuW-0N-iCh"/>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="bottom" secondItem="R5g-kJ-ejP" secondAttribute="bottom" constant="350" id="Uk3-dR-cIV"/>
+                            <constraint firstItem="1x1-hv-TMR" firstAttribute="top" secondItem="TgK-Be-mua" secondAttribute="top" id="ZiP-SW-7mN"/>
+                            <constraint firstItem="29l-xd-VSJ" firstAttribute="top" secondItem="TgK-Be-mua" secondAttribute="top" id="cAd-n2-gtx"/>
+                            <constraint firstItem="1x1-hv-TMR" firstAttribute="leading" secondItem="TgK-Be-mua" secondAttribute="leading" id="kDe-7H-dYY"/>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="trailing" secondItem="29l-xd-VSJ" secondAttribute="trailing" id="pgt-UF-99j"/>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="bottom" secondItem="29l-xd-VSJ" secondAttribute="bottom" id="q5g-Gi-CGO"/>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="trailing" secondItem="R5g-kJ-ejP" secondAttribute="trailing" id="teA-1b-TeM"/>
+                            <constraint firstItem="TgK-Be-mua" firstAttribute="bottom" secondItem="1x1-hv-TMR" secondAttribute="bottom" id="wdM-Pr-1Ig"/>
+                            <constraint firstItem="R5g-kJ-ejP" firstAttribute="leading" secondItem="TgK-Be-mua" secondAttribute="leading" id="yv4-Hx-Ahe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TgK-Be-mua"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sHG-mi-kzD"/>
+                    <connections>
+                        <outlet property="emptyView" destination="29l-xd-VSJ" id="ii5-tN-cug"/>
+                        <outlet property="emptyViewLabel" destination="b4l-Ac-RBp" id="ab7-0W-b3x"/>
+                        <outlet property="photoTableView" destination="1x1-hv-TMR" id="wSX-da-Qab"/>
+                        <outlet property="recentSearchesContainerView" destination="R5g-kJ-ejP" id="r3S-aa-87E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4r-Kt-K6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575.36231884058" y="-555.13392857142856"/>
+        </scene>
+        <!--Photo Search Detail View Controller-->
+        <scene sceneID="MId-dn-H7u">
+            <objects>
+                <viewController storyboardIdentifier="PhotoSearchDetailViewController" id="qyb-fx-cz2" customClass="PhotoSearchDetailViewController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UCY-V5-YwC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ss-uL-sx9">
+                                <rect key="frame" x="107" y="115" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="foS-oG-WNj"/>
+                                    <constraint firstAttribute="width" constant="200" id="xnt-W6-uAA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-BH-LXI">
+                                <rect key="frame" x="172" y="335" width="70" height="31"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="25"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPu-Ur-BeM">
+                                <rect key="frame" x="57" y="386" width="300" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="O38-bD-qFp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wm-ih-XZP">
+                                <rect key="frame" x="27" y="82" width="387" height="25"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="heart"/>
+                                <connections>
+                                    <action selector="favoritesButtonTapped:" destination="qyb-fx-cz2" eventType="touchUpInside" id="Spj-aZ-VwG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iof-qn-ifk">
+                                <rect key="frame" x="107" y="107" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IRB-BH-LXI" firstAttribute="centerX" secondItem="9Uh-9s-aW8" secondAttribute="centerX" id="40M-xZ-qET"/>
+                            <constraint firstItem="0ss-uL-sx9" firstAttribute="centerX" secondItem="9Uh-9s-aW8" secondAttribute="centerX" id="5Qy-9q-PB1"/>
+                            <constraint firstItem="nPu-Ur-BeM" firstAttribute="centerX" secondItem="9Uh-9s-aW8" secondAttribute="centerX" id="9Tb-W8-oF1"/>
+                            <constraint firstItem="9Uh-9s-aW8" firstAttribute="trailing" secondItem="5wm-ih-XZP" secondAttribute="trailing" id="AQH-Ss-hZv"/>
+                            <constraint firstItem="Iof-qn-ifk" firstAttribute="bottom" secondItem="5wm-ih-XZP" secondAttribute="bottom" id="HeJ-SQ-Sdk"/>
+                            <constraint firstItem="nPu-Ur-BeM" firstAttribute="top" secondItem="IRB-BH-LXI" secondAttribute="bottom" constant="20" id="P2E-A8-h1O"/>
+                            <constraint firstItem="0ss-uL-sx9" firstAttribute="top" secondItem="9Uh-9s-aW8" secondAttribute="top" constant="71" id="Sdv-k4-VWX"/>
+                            <constraint firstItem="Iof-qn-ifk" firstAttribute="leading" secondItem="0ss-uL-sx9" secondAttribute="leading" id="djL-7b-oax"/>
+                            <constraint firstItem="0ss-uL-sx9" firstAttribute="top" secondItem="5wm-ih-XZP" secondAttribute="bottom" constant="8" id="gh3-s3-mYq"/>
+                            <constraint firstItem="IRB-BH-LXI" firstAttribute="top" secondItem="0ss-uL-sx9" secondAttribute="bottom" constant="20" id="hMG-1f-BTB"/>
+                            <constraint firstItem="5wm-ih-XZP" firstAttribute="leading" secondItem="Iof-qn-ifk" secondAttribute="trailing" constant="-80" id="q0i-LG-cQp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Uh-9s-aW8"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="nPu-Ur-BeM" id="udB-bs-g1x"/>
+                        <outlet property="favoritesButton" destination="5wm-ih-XZP" id="tU0-xD-fkG"/>
+                        <outlet property="likeToFavoriteLabel" destination="Iof-qn-ifk" id="QKJ-Mp-DEC"/>
+                        <outlet property="nameLabel" destination="IRB-BH-LXI" id="scx-PM-hj8"/>
+                        <outlet property="photoDetailImageView" destination="0ss-uL-sx9" id="mw9-bD-QGM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yt-AD-a0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3333.3333333333335" y="-551.11607142857144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zSd-kT-bRG">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarViewController" id="b5u-Sh-t2X" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gKR-Qj-KOG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="d44-c8-sim" kind="relationship" relationship="viewControllers" id="J9y-1R-F0E"/>
+                        <segue destination="k8F-R1-hxw" kind="relationship" relationship="viewControllers" id="NNV-TL-nEt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LIg-Ls-0tB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747" y="-231"/>
+        </scene>
+        <!--Photo Search Navigation Controller-->
+        <scene sceneID="aun-hf-GT9">
+            <objects>
+                <navigationController storyboardIdentifier="PhotoSearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="d44-c8-sim" customClass="PhotoSearchNavigationController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="wxL-js-gcc">
+                        <color key="badgeColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uZQ-Mx-s0j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="searchTabBarItem" destination="wxL-js-gcc" id="Qez-q5-dnL"/>
+                        <segue destination="hku-0b-imT" kind="relationship" relationship="rootViewController" id="OP0-JL-GRB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oe5-ji-uTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665.217391304348" y="-555.13392857142856"/>
+        </scene>
+        <!--Favorites Navigation Controller-->
+        <scene sceneID="52H-rw-5oG">
+            <objects>
+                <navigationController storyboardIdentifier="FavoritesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="k8F-R1-hxw" customClass="FavoritesNavigationController" customModule="UnsplashPhotoFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="eKs-bx-U8b"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TQT-gM-3Xd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="favoritesTabBarItem" destination="eKs-bx-U8b" id="pTp-nt-xZl"/>
+                        <segue destination="sKr-gP-swB" kind="relationship" relationship="rootViewController" id="VFQ-ac-Lf0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbF-dt-w97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665.217391304348" y="92.410714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" width="25" height="25"/>
+    </resources>
+    <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+</document>
